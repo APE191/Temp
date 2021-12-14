@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+.hej:hover{
+fill: aliceblue;
+cursor: pointer;
+}
+#tooltip {
+  background: rgb(223, 221, 208);
+  border: 1px solid black;
+  border-radius: 50px;
+  padding: 30px;
+}
+
+</style>
+<body>
+  <H1>Prøv mig</H1>
+
+
+  <svg height="1000" width="1000">
+    <circle class="hej" cx="400" cy="200" r="40" stroke="black" stroke-width="3" fill="red"onmousemove="showTooltip(evt, 'This is a circle');" onmouseout="hideTooltip();" />
+    Sorry, your browser does not support inline SVG.  
+  </svg> 
+
+</body>
+<div id="tooltip" display="none" style="position: absolute; display: none;"></div>
+<script>
+ function showTooltip(evt, text) {
+   let tooltip = document.getElementById("tooltip");
+   tooltip.innerHTML = text;
+   tooltip.style.display = "block";
+   tooltip.style.left = evt.pageX + 10 + 'px';
+   tooltip.style.top = evt.pageY + 10 + 'px';
+ }
+ 
+ function hideTooltip() {
+   var tooltip = document.getElementById("tooltip");
+   tooltip.style.display = "none";
+ }
+       </script>
+</html> 
